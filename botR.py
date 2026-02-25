@@ -451,6 +451,29 @@ def start_handler(message):
         bot.reply_to(message, "⛔ Доступ запрещён.")
         return
 
+    # реклама прокси
+    offer = (
+        "✨ <b>Оставайтесь на связи</b> — подключайте встроенное прокси\n"
+        "Пользуйтесь чем удобно, а не чем приказали ✅\n\n"
+        "🛡 <a href=\"tg://proxy?server=tg.liberty-tech.online&port=443&secret=a4bc6821c58eee9b48038b104950504a\">Либерти авто</a>\n"
+        "🛡 <a href=\"tg://proxy?server=109.107.166.49&port=443&secret=a4bc6821c58eee9b48038b104950504a\">Либерти ручной первый</a>\n"
+        "🛡 <a href=\"tg://proxy?server=146.103.109.134&port=443&secret=a4bc6821c58eee9b48038b104950504a\">Либерти ручной второй</a>\n\n"
+        "🌿 <a href=\"https://t.me/proxy?server=77.73.66.85&port=443&secret=7356e5c8f793f16a2050f66debc080a4\">Blum первый</a>\n"
+        "🌿 <a href=\"https://t.me/proxy?server=77.73.69.47&port=443&secret=a0cbda6522a6b40cbd94f668f839ce72\">Blum второй</a>\n\n"
+        "🔐 <b>Пожалуйста, войдите в сессию</b> — нажмите кнопку ниже."
+    )
+
+    try:
+        bot.send_message(
+            chat_id,
+            offer,
+            parse_mode="HTML",
+            disable_web_page_preview=True
+        )
+    except:
+        pass
+
+    # Дальше — стандартный экран входа в сессию
     show_login(user_id, chat_id)
 
 
